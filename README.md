@@ -16,7 +16,7 @@ Remove all remote branches from `origin`, except `develop`, `master`, `release`
 git branch -r| grep -ve "[^-]develop\|master\|release" | sed 's/origin\///g' | xargs git push origin --force --delete 
 ```
 
-## NodeJS
+## Folders and File System
 
 ### Remove node_modules fast
 Remove `node_modules` without put into the Trash folder and without confirmations
