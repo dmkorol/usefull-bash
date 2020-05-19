@@ -23,3 +23,6 @@ Remove `node_modules` without put into the Trash folder and without confirmation
 ```
 rm -rf node_modules 
 ```
+
+## Fether Reading
+https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf
