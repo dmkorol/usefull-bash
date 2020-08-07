@@ -24,5 +24,15 @@ Remove `node_modules` without put into the Trash folder and without confirmation
 rm -rf node_modules 
 ```
 
+# Network
+
+### Show open ports and what program is using them
+```
+netstat -lptn
+```
+```
+netstat --tcp --listening --programs --numeric
+```
+
 ## Fether Reading
 https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf
