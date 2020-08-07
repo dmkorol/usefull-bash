@@ -3,7 +3,7 @@
 Main idea is collectiong small bash scripts that can be usefull in dayly work
 
 
-## Work with GIT
+# GIT
 ### Remove local branches
 Remove all local branches except `develop`, `master`, `release`
 ```
@@ -16,7 +16,7 @@ Remove all remote branches from `origin`, except `develop`, `master`, `release`
 git branch -r| grep -ve "[^-]develop\|master\|release" | sed 's/origin\///g' | xargs git push origin --force --delete 
 ```
 
-## Folders and File System
+# Folders
 
 ### Remove folder fast
 Remove `node_modules` without put into the Trash folder and without confirmations
