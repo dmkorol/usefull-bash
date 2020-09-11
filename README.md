@@ -16,6 +16,15 @@ Remove all remote branches from `origin`, except `develop`, `master`, `release`
 git branch -r| grep -ve "[^-]develop\|master\|release" | sed 's/origin\///g' | xargs git push origin --force --delete 
 ```
 
+### Move files/folders with saving history
+```
+# Create destination folder recursively
+mkdir -p libs/static
+
+# Move folders and files except 'libs' folder
+ls | grep -v "libs" | xargs -L1 -I{} git mv {} libs/static/
+```
+
 # Folders
 
 ### Remove folder fast
