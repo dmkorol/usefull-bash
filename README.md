@@ -25,6 +25,15 @@ mkdir -p libs/static
 ls | grep -v "libs" | xargs -L1 -I{} git mv {} libs/static/
 ```
 
+### Merge files from other repo
+```
+git remote add static -f git@github.com/repo-to-merge.git
+git merge static/master --allow-unrelated-histories
+git commit -am "Merge files from repo-to-merge"
+git remote remove static
+git push origin master
+```
+
 # Folders
 
 ### Remove folder fast
