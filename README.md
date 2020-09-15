@@ -34,6 +34,26 @@ git remote remove static
 git push origin master
 ```
 
+### Fix commit username, email
+Change the author and committer name and e-mail of multiple commits in Git
+```
+git filter-branch -f --env-filter '
+OLD_EMAIL="admin@localhost"
+CORRECT_NAME="John Doe"
+CORRECT_EMAIL="john@doe.com"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
+```
+
 # Folders
 
 ### Remove folder fast
